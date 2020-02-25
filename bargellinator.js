@@ -3,7 +3,6 @@
 // let some colors repeat vertically in the pattern so they create more solid bands
 // build new color stacking so it doesn't just look like zigzags
 // if the color is really bright, the text label in the palette should be dark
-// add watermark?
 
 // sets the placement of the stitch on the y axis
 let y = 0;
@@ -20,24 +19,21 @@ var rainbow = new Array(10);
 let r;
 let w;
 
+// here's how the menu works
+let menuheader;
+let savebutton;
+let againbutton;
+let menuover = false;
+let saveover = false;
+let againover = false;
+
 function setup() {
 createCanvas(windowWidth,windowHeight);
  noStroke();
  textAlign(CENTER,CENTER);
+  textStyle(BOLD);
   
-rainbow[0] = color(random(256),random(256),random(256));
-rainbow[1] = color(random(256),random(256),random(256));
-rainbow[2] = color(random(256),random(256),random(256));
-rainbow[3] = color(random(256),random(256),random(256));
-rainbow[4] = color(random(256),random(256),random(256));
-rainbow[5] = color(random(256),random(256),random(256));
-rainbow[6] = color(random(256),random(256),random(256));
-rainbow[7] = color(random(256),random(256),random(256));
-rainbow[8] = color(random(256),random(256),random(256));
-rainbow[9] = color(random(256),random(256),random(256));
-  
-r = Math.round(random(2, 10));
-w = Math.round(random(2, 8));
+resetSketch();
 
 }
 
@@ -46,8 +42,6 @@ function draw () {
 // stitch width and height
 let a = width*0.0125;
 let b = a*4;
-  
-  console.log("rainbow[1]=", rainbow[1]);
   
   
   for (let t = 0; t < w; t++) {
@@ -102,17 +96,105 @@ if (x > width) {
        
        //add color names on top
        fill(256,256,256);
-      
-       text("#" + hex(rainbow[l],6), (l*k) + (k*0.5), height*0.95); 
-      
+       textSize(18);
+       text(rainbow[l].toString('#rrggbb'), (l*k) + (k*0.5), height*0.95); 
+     
    }
-   
+  
+// MENU and NAV  
+
+fill(255); 
+strokeWeight(3);
+stroke(rainbow[0]);
+
+// bargellinator circle
+menuheader = ellipse(width*0.1, width*0.1, width*0.1);
+
+// save circle
+savebutton = ellipse(width*0.1, width*0.2, width*0.05);
+
+// again circle
+againbutton = ellipse(width*0.1, width*0.275, width*0.05);
+
+  noStroke();
+
+textSize(10);
+fill(rainbow[1]);
+
+// bargellinator text
+text("bargellinator.io", width*0.1, width*0.1);
+
+// save text
+text("save", width*0.1, width*0.2);
+
+// again text
+text("again", width*0.1, width*0.275);
+  
    noLoop();
-   
-   // saves the design with a hex value reference number
-   let filename = "Bargellinator-#" + hex(rainbow[0],6) + ".png";
-   print(filename);
-   save(filename);
   
  }
  }
+
+function mouseClicked() {
+    if (
+    (mouseX > width*0.05) &&
+    (mouseY > width*0.15) &&
+    (mouseX < width*0.15) &&
+    (mouseY < width*0.25) 
+    )  {
+    saveover = true;
+  }
+  else {
+   saveover = false; 
+  }
+  
+  if (
+    (mouseX > width*0.05) &&
+    (mouseY > width*0.225) &&
+    (mouseX < width*0.15) &&
+    (mouseY < width*0.325) 
+    )  {
+    againover = true;
+  }
+  else {
+   againover = false; 
+  }
+
+    
+  if (saveover == true) {
+   let filename = "Bargellinator-" + rainbow[0].toString('#rrggbb') + ".png";
+   print(filename);
+   save(filename);
+  }
+  if (againover == true) {
+    resetSketch();
+  }
+}
+
+function resetSketch() {
+  fill(230);
+  rect(0,0,width,height);
+  
+  y = 0;
+  u = 0;
+  s = 0;
+  x = 0;
+  menuover = false;
+  saveover = false;
+  againover = false;
+ 
+  rainbow[0] = color(random(256),random(256),random(256));
+  rainbow[1] = color(random(256),random(256),random(256));
+  rainbow[2] = color(random(256),random(256),random(256));
+  rainbow[3] = color(random(256),random(256),random(256));
+  rainbow[4] = color(random(256),random(256),random(256));
+  rainbow[5] = color(random(256),random(256),random(256));
+  rainbow[6] = color(random(256),random(256),random(256));
+  rainbow[7] = color(random(256),random(256),random(256));
+  rainbow[8] = color(random(256),random(256),random(256));
+  rainbow[9] = color(random(256),random(256),random(256));
+
+  r = Math.round(random(2, 10));
+  w = Math.round(random(2, 8));
+  loop();
+}
