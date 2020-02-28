@@ -96,76 +96,76 @@ function draw () {
      
     }
   
-    // adds menu and nav
-    fill(255); 
-    strokeWeight(3);
-    stroke(rainbow[0]);
+    // // adds menu and nav
+    // fill(255); 
+    // strokeWeight(3);
+    // stroke(rainbow[0]);
 
-    // bargellinator circle
-    menuheader = ellipse(width*0.1, width*0.1, width*0.1);
+    // // bargellinator circle
+    // menuheader = ellipse(width*0.1, width*0.1, width*0.1);
 
-    // save circle
-    savebutton = ellipse(width*0.1, width*0.2, width*0.05);
+    // // save circle
+    // savebutton = ellipse(width*0.1, width*0.2, width*0.05);
 
-    // again circle
-    againbutton = ellipse(width*0.1, width*0.275, width*0.05);
+    // // again circle
+    // againbutton = ellipse(width*0.1, width*0.275, width*0.05);
 
-    noStroke();
-    textSize(10);
-    fill(rainbow[1]);
+    // noStroke();
+    // textSize(10);
+    // fill(rainbow[1]);
 
-    // bargellinator text
-    text("bargellinator.io", width*0.1, width*0.1);
+    // // bargellinator text
+    // text("bargellinator.io", width*0.1, width*0.1);
 
-    // save text
-    text("save", width*0.1, width*0.2);
+    // // save text
+    // text("save", width*0.1, width*0.2);
 
-    // again text
-    text("again", width*0.1, width*0.275);
+    // // again text
+    // text("again", width*0.1, width*0.275);
     
     noLoop();
   }
  }
 
-// this makes the buttons clickable
-function mouseClicked() {
+// // this makes the buttons clickable
+// function mouseClicked() {
   
-  // this is the save button clickability 
-  if (
-    (mouseX > width*0.05) &&
-    (mouseY > width*0.15) &&
-    (mouseX < width*0.15) &&
-    (mouseY < width*0.25) 
-    )  {
-    saveover = true;
-  }
-  else {
-   saveover = false; 
-  }
+//   // this is the save button clickability 
+//   if (
+//     (mouseX > width*0.05) &&
+//     (mouseY > width*0.15) &&
+//     (mouseX < width*0.15) &&
+//     (mouseY < width*0.25) 
+//     )  {
+//     saveover = true;
+//   }
+//   else {
+//    saveover = false; 
+//   }
   
-  // this is the refresh button clickability
-  if (
-    (mouseX > width*0.05) &&
-    (mouseY > width*0.225) &&
-    (mouseX < width*0.15) &&
-    (mouseY < width*0.325) 
-    )  {
-    againover = true;
-  }
-  else {
-   againover = false; 
-  }
+//   // this is the refresh button clickability
+//   if (
+//     (mouseX > width*0.05) &&
+//     (mouseY > width*0.225) &&
+//     (mouseX < width*0.15) &&
+//     (mouseY < width*0.325) 
+//     )  {
+//     againover = true;
+//   }
+//   else {
+//    againover = false; 
+//   }
 
-  // this tells the computer how to save the image
-  if (saveover == true) {
-   let filename = "Bargellinator-" + rainbow[0].toString('#rrggbb') + ".png";
-   print(filename);
-   save(filename);
-  }
-  if (againover == true) {
-    resetSketch();
-  }
-}
+//   // this tells the computer how to save the image
+//   if (saveover == true) {
+//    let filename = "Bargellinator-" + rainbow[0].toString('#rrggbb') + ".png";
+//    print(filename);
+//    save(filename);
+//   }
+//   if (againover == true) {
+//     resetSketch();
+//   }
+// }
 
 // builds the environment from scratch 
 function resetSketch() {
