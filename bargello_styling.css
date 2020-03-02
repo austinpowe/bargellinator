@@ -1,3 +1,5 @@
+
+
 canvas {
 	position: absolute;
 	z-index: 1;
@@ -27,5 +29,5 @@ a:hover {
 	border: solid white 3px;
 	line-height: 3;
 	/* i'd like to make this refer to the first color palette color? */
-	background-color: rgba(0,0,0,1);
+	background-color: #000;
 }

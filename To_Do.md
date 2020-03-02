@@ -1,19 +1,20 @@
 ## To Do
 
 ### Nav and Site
-- Make nav background refer to one of the palette colors
 - Make nav prettier? 
 
 ### Pattern Design
-- Make some colors repeat twice in a row to create bands of color
-- Make some vertical lines repeat to create bands of color
 - Make color palette more pleasing (https://css-tricks.com/re-pleasing-color-palettes/)
 - Enable black or white text based on brightness of color in palette at bottom   
+- Sometimes it fails and I don't know why!!!
 
 ### About Page
 - Design
 - Footer with copyright etc
 - Rollover keywords in headline for definitions via Javascript?
+- Fix link to my website (again)
+- Size pics better
+- Link to raw code
 
 ### General
 - Fix refresh on Safari (May be fixed by moving to HTML buttons)
@@ -22,6 +23,9 @@
 
 ## Done
 - Remove in-sketch nav and update to HTML overlay
-- Create "about" page with my info, stitch examples, and link to raw code
+- Create "about" page with my info, stitch examples
 - Remove "screenshot" function
 - Clean up code labels
+- Make some colors repeat twice in a row to create bands of color, both vertically and horizontally
+- Make nav background refer to one of the palette colors
+

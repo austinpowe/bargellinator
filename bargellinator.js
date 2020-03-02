@@ -12,6 +12,11 @@ let x = 0;
 var rainbow = new Array(10);
 let r;
 let w;
+let doublecolor;
+let snakeycurves;
+let snakeycounter = 0;
+let snakeylimit;
+let menunavcolor;
 
 // here's how the menu works
 let menuheader;
@@ -27,6 +32,11 @@ noStroke();
 textAlign(CENTER,CENTER);
 textStyle(BOLD);
 resetSketch();
+menucolorchange();
+}
+
+function menucolorchange() {
+  document.getElementById("menunavigator").style.backgroundColor=menunavcolor;
 }
 
 function draw () {
@@ -36,44 +46,82 @@ function draw () {
   let b = a*4;
     
   // a loop to draw stitches + change colors each time
+  // doublecolor lets the color repeat sometimes
   for (let t = 0; t < w; t++) {
 
-    //this sets the color of the next stitch
-    fill(rainbow[t]);
+    if (t == doublecolor) {
     
-    // this creates a new stitch
-    rect(x,(y+u),a,b,b);
- 
-    // this moves the needle down to a new stitch 
-    y = y + b;
-    
-  }
+      // this creates a new stitch
+      rect(x,(y+u),a,b,b);
+
+      // this moves the needle down to a new stitch 
+      y = y + b;
+
+    }
+    else {
+
+      //this sets the color of the next stitch
+      fill(rainbow[t]);
+      
+      // this creates a new stitch
+      rect(x,(y+u),a,b,b);
+   
+      // this moves the needle down to a new stitch 
+      y = y + b;
+    }
+   }
 
   // this sets the new offset from the top on the next row
-  if (y > (height - u)) {
+  if (y > (height - u) && snakeycurves == s) {
+
+       //this sets it to the top
+       y = 0;
+       
+       // this moves everything over to the right one stitch 
+       x = x + a;
+
+       if (snakeycounter < snakeylimit) {
+         snakeycounter = snakeycounter + 1;
+
+       }
+       else {
+        snakeycounter = 0;
+
+          if (s >= 0 && s < r) {
+             u = u - (b * 0.5);
+             s = s + 1;
+           }
+          else if (s < 0 && r < 0) {
+            u = u + (b * 0.5);
+            s = s + 1;
+           }
+       }
+
+  }
+  else if (y > (height - u) && snakeycurves != s) {
    
-   if (s >= 0 && s < r) {
-     u = u - (b * 0.5);
-     s = s + 1;
-   }
-   else if (s > 0 && s >= r) {
-    r = (r * -1);
-    s = (s * -1);
-   }
-   else if (s < 0 && r < 0) {
-    u = u + (b * 0.5);
-    s = s + 1;
-   }
-   else if (s >= 0 && r < 0) {
-    r = (r * -1);
-    s = (s * -1);
-   }
-   
-   //this sets it to the top
-   y = 0;
-   
-   // this moves everything over to the right one stitch 
-   x = x + a;
+           if (s >= 0 && s < r) {
+             u = u - (b * 0.5);
+             s = s + 1;
+           }
+           else if (s > 0 && s >= r) {
+            r = (r * -1);
+            s = (s * -1);
+           }
+           else if (s < 0 && r < 0) {
+            u = u + (b * 0.5);
+            s = s + 1;
+           }
+           else if (s >= 0 && r < 0) {
+            r = (r * -1);
+            s = (s * -1);
+           }
+       
+       //this sets it to the top
+       y = 0;
+       
+       // this moves everything over to the right one stitch 
+       x = x + a;
   }
  
   // triggers if we've filled up the screen with stitches
@@ -101,7 +149,7 @@ function draw () {
  }
 
 function resetSketch() { // builds the environment from scratch 
-  fill(230);
+  fill(255);
   rect(0,0,width,height);
   
   // resets variables
@@ -126,6 +174,10 @@ function resetSketch() { // builds the environment from scratch
   rainbow[9] = color(random(256),random(256),random(256));
   r = Math.round(random(2, 10));
   w = Math.round(random(2, 8));
+  doublecolor = Math.round(random(2,7));
+  snakeycurves = Math.round(random(2,8));
+  snakeylimit = Math.round(random(0,4));
+  menunavcolor = rainbow[0];
 
   loop();
 }
