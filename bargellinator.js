@@ -1,4 +1,4 @@
-// sets the placement of the first stitch
+// sets the placement of the first stitch on the y axis
 let y = 0;
 let u = 0;
 
@@ -26,6 +26,7 @@ let menuover = false;
 let saveover = false;
 let againover = false;
 
+//begins the drawing
 function setup() {
 createCanvas(windowWidth,windowHeight);
 noStroke();
@@ -35,10 +36,13 @@ resetSketch();
 menucolorchange();
 }
 
+
+//this is for the menu nav in the HTML file
 function menucolorchange() {
   document.getElementById("menunavigator").style.backgroundColor=menunavcolor;
 }
 
+//this is the main function of this program
 function draw () {
 
   // sets dynamic stitch width and height

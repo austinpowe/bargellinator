@@ -1,26 +1,69 @@
-#content {
-	font-family: 'Helvetica';
-	
-	padding-top: 2%;
-	padding-left: 25%;
-	padding-right: 25%;
+:root {
+	--links: #b00;
+	--behind: #C9BDB1;
+	--snapshots: #F5F0ED;
+	--maintext: #33281F;
 }
 
-h1 {
+body {
+	background-color: var(--behind);
+}
+
+#content {
+	padding-top: 2%;
+	padding-left: 15%;
+	padding-right: 15%;
+	float: left;
+}
+
+.pics {
+	float: left;
+	width: 25%;
+}
+
+.words {
+	margin-left:5%;
+	width: 70%;
+	float: left;
+}
+
+
+h1, h3 {
 	line-height: 1.5;
+	font-family: 'Fredoka One', cursive;
+	color: var(--maintext);
+	margin-top: 0;
 }
 
 p {
+	font-family: 'Lato', sans-serif;
 	line-height: 1.75;
-	clear:both;
-}
-
-#pictures {
+	clear: both;
+	color: var(--maintext);
 }
 
 img {
-	float: left;
-	width: 46%;
-	margin-bottom: .5em;
-	margin: 2%;
+	margin-bottom:1em;
+	width: 100%;
+	background-color: var(--snapshots);
+}
+
+a {
+	color: var(--links);
+}
+
+#WhatsGenerative {
+	display: none;
+	color: var(--links);
+}
+
+#WhatsBargello {
+	display: none;
+	color: var(--links);
+}
+
+
+#footer {
+	margin-top: 15em;
+	font-size: 75%;
 }
