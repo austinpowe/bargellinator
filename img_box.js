@@ -13,9 +13,9 @@ window.onload = function() {
     idpopup_img_box.style.top = 0
     idpopup_img_box.style.left = 0
     idpopup_img_box.style.opacity = 0
-    idpopup_img_box.style.width = '80%'
-    idpopup_img_box.style.height = '80%'
-    idpopup_img_box.style.padding = '10%'
+    idpopup_img_box.style.width = '50%'
+    idpopup_img_box.style.height = '100%'
+    idpopup_img_box.style.padding = '25%'
     idpopup_img_box.style.display = 'none'
     idpopup_img_box.style.position = 'fixed'
     idpopup_img_box.style.cursor = 'pointer'
@@ -53,9 +53,9 @@ function img_box(self) {
             idpopup_img_box.style.paddingTop = '0px'
         }
 
-        if (allow_hide_scroll_img_box == 'yes') {
-            document.body.style.overflow = 'hidden'
-        }
+        // if (allow_hide_scroll_img_box == 'yes') {
+        //     document.body.style.overflow = 'hidden'
+        // }
         idpopup_img_box.style.display = 'block'
     }
 

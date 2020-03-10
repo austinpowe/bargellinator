@@ -1,15 +1,9 @@
 ## To Do
 
-### Nav on index.html
-- Put sitename in a more logo-y thing? Don't make it look like a link
-
 ### Pattern Design
-- Make color palette more pleasing (https://css-tricks.com/re-pleasing-color-palettes/) ??
-- Enable black or white text based on brightness of color in palette at bottom
 - Sometimes it fails and I don't know why!!!
 
 ### About Page
-- Better color scheme, less boring
 - Turn keyword definition into rollover OR click for anyone on desktop (keep click for mobile)
 
 ## Done
@@ -24,3 +18,11 @@
 - Link to raw code
 - Fix refresh on Safari
 - Unified font that isn't Helvetica
+- Added logo
+- Color pallete color names should be in same font as elsewhere
+- Fixed issues with the asterisks
+- Better images on about page
+
+## Given Up
+- Make color palette more pleasing but still remain random
+- Enable black or white text based on brightness of color in palette at bottom

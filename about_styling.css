@@ -1,8 +1,9 @@
 :root {
-	--links: #b00;
-	--behind: #C9BDB1;
+	--links: #885E97;
+	--behind: #F1F5F6;
 	--snapshots: #F5F0ED;
-	--maintext: #33281F;
+	--maintext: #191321;
+	--hoverlinks: #CA586C;
 }
 
 body {
@@ -48,8 +49,16 @@ img {
 	background-color: var(--snapshots);
 }
 
+img:hover {
+	box-shadow: 0 0 0 3px var(--hoverlinks);
+}
+
 a {
 	color: var(--links);
+}
+
+a:hover {
+	color: var(--hoverlinks);
 }
 
 #WhatsGenerative {
@@ -61,7 +70,6 @@ a {
 	display: none;
 	color: var(--links);
 }
-
 
 #footer {
 	margin-top: 15em;

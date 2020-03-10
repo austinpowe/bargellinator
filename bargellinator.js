@@ -36,7 +36,6 @@ resetSketch();
 menucolorchange();
 }
 
-
 //this is for the menu nav in the HTML file
 function menucolorchange() {
   document.getElementById("menunavigator").style.backgroundColor=menunavcolor;
@@ -143,6 +142,7 @@ function draw () {
        
        //add hex color names to each block
        fill(256,256,256);
+       textFont('Fredoka One');
        textSize(18);
        text(rainbow[l].toString('#rrggbb'), (l*k) + (k*0.5), height*0.95); 
      

@@ -20,6 +20,11 @@ a:hover {
 	text-decoration: underline;
 }
 
+#logo {
+	height: 50px;
+	margin-bottom: -30px;
+}
+
 #menunavigator {
 	position: absolute;
 	z-index: 2;
@@ -27,8 +32,8 @@ a:hover {
 	font-family: 'Helvetica';
 	padding: 2%;
 	padding-top: 5%;
-	border: solid white 3px;
-	line-height: 3;
-	/* i'd like to make this refer to the first color palette color? */
+	border: solid white 4px;
+	border-top: none;
+	line-height: 2;
 	background-color: #000;
 }
